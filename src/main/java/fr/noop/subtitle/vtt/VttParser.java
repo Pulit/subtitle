@@ -81,7 +81,7 @@ public class VttParser implements SubtitleParser {
 
             if (cursorStatus == CursorStatus.SIGNATURE ||
                     cursorStatus == CursorStatus.EMPTY_LINE) {
-                if (textLine.isEmpty()) {
+                if (textLine.isEmpty() || textLine.startsWith("Kind:") || textLine.startsWith("Language:")) {
                     continue;
                 }
 
